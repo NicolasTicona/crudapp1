@@ -1,0 +1,48 @@
+
+
+<h1>User List</h1>
+<div class="container">
+    
+    <div class="align-button">
+     <button (click)="openDialog()" mat-raised-button color="primary">Registrar</button>
+    </div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="nombres">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Nombres</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">
+            {{user.nombre}} {{user.apellidoPaterno}} {{user.apellidoMaterno}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="cargo">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Cargo</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">
+            {{user.cargo}}
+        </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="salario">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Salario</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">
+            {{user.salario | currency:'CAD':'symbol-narrow':'4.2-2'}}
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Salario</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">
+            <button 
+                [routerLink]="['/user', user.id]"
+                mat-raised-button color="primary">Editar</button>
+        </mat-cell>
+    </ng-container>
+    
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+
+
+</div>

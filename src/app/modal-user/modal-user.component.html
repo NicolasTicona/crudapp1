@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>Insertar datos</h1>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+        
+    <div mat-dialog-content>
+       
+        <div class="form-group">
+            <label>Nombre </label>
+            <input mat-input
+            required
+            type="text"
+            name="nombre"
+            [(ngModel)]="data.nombre"
+            placeholder="Introducir un nombre"
+        >
+        </div>
+        <div class="form-group">
+            <label>Apellido Paterno </label>
+            <input mat-input
+            required
+            type="text"
+            name="apellidoPaterno"
+            [(ngModel)]="data.apellidoPaterno"
+            placeholder="Introducir apellido paterno"
+        >
+        </div>
+        <div class="form-group">
+            <label>Apellido Materno </label>
+            <input mat-input
+            type="text"
+            name="apellidoMaterno"
+            [(ngModel)]="data.apellidoMaterno"
+            placeholder="Introducir apellido materno"
+        >
+        </div>
+        <div class="form-group">
+            <label>Cargo </label>
+            <mat-select
+            required
+            type="text"
+            name="cargo"
+            [(ngModel)]="data.cargo"
+            placeholder="Introducir un cargo"
+            >
+                <mat-option value="Desarrollador">Desarrollador</mat-option>
+                <mat-option value="Director">Director</mat-option>
+                <mat-option value="Profesor">Profesor</mat-option>
+             </mat-select>
+        </div>
+        <div class="form-group">
+            <label>Salario </label>
+            <input mat-input
+            required
+            type="text"
+            name="salario"
+            [(ngModel)]="data.salario"
+            placeholder="Introducir un salario"
+            >
+        </div>
+    </div>
+
+<div mat-dialog-actions>
+    
+    <button 
+    mat-raised-button type="submit">
+    Guardar
+    </button>
+
+</div>
+</form>
+    

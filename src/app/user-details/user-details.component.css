@@ -1,0 +1,11 @@
+span{
+    font-weight: bold;
+}
+
+ng-container{
+    padding: 30px;
+}
+
+.back{
+    margin-bottom: 30px;
+}

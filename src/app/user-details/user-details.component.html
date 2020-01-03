@@ -1,0 +1,33 @@
+<ng-container>
+    <button  class="back" routerLink="/users" mat-raised-button color="primary">Reresar</button>
+    <mat-card>
+        <mat-card-title>User details</mat-card-title>
+        <mat-card-content>
+            <p>
+                <span>Nombre</span>
+                {{user.nombre}}
+            </p>
+            <p>
+                <span>Apellido Paterno</span>
+                {{user.apellidoPaterno}}
+            </p>
+            <p *ngIf="user.apellidoMaterno" >
+                <span>Apellido Materno</span>
+                {{user.apellidoMaterno}}
+            </p>
+            <p>
+                <span>Cargo</span>
+                {{user.cargo}}
+            </p>
+            <p>
+                <span>Salario</span>
+                {{user.salario | currency:'CAD':'symbol-narrow':'4.2-2'}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="openDialog()" mat-raised-button>Editar</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>
+
+
